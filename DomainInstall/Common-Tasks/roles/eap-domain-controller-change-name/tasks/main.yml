@@ -1,0 +1,3 @@
+---
+ - name: Cambiando el nombre del Domain Controller {{domain_controller_name}}
+   command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/host=master:write-attribute(name=name, value={{domain_controller_name}}"

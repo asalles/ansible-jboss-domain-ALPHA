@@ -1,0 +1,26 @@
+---
+# This playbook
+
+- hosts: hostscontrollers
+  remote_user: root
+  vars:
+    jboss_service_name: jboss-eap
+    jboss_eap_version: 7.1.0
+
+  vars_files:
+    - variables/jboss-eap-variables.yml
+
+  roles:
+    - create-jboss-user
+    - jdk-install
+    - eap-install-dependencies
+    - eap-install-domain-from-jar
+    - eap-domain-service-configuration-rhel
+    - eap-host-controller-configuration
+    - eap-host-controller-remove-default-servers-and-groups
+    - eap-domain-controller-reload
+    - eap-host-controller-change-name
+    - eap-host-controller-conection
+    - eap-host-controller-create-server
+    - eap-apply-patches
+    - eap-host-firewalld

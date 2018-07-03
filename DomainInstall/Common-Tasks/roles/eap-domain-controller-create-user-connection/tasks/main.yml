@@ -1,0 +1,3 @@
+---
+ - name: Creando usuario de conexion {{jboss_eap_connection_user}}
+   command: chdir={{jboss_eap_home_path}}/bin/ ././add-user.sh {{ jboss_eap_connection_user }} {{ jboss_eap_connection_password }}

@@ -1,0 +1,13 @@
+---
+- name: Conectando 
+  command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/host={{ host_controller_name }}:write-remote-domain-controller(host={{domain_master_address}},port=9999,username={{jboss_eap_connection_user}},security-realm=ManagementRealm)"
+
+- name: "Stop JBoss"
+  service:
+     name: "jboss-eap"
+     state: stopped
+
+- name: "Start JBoss"
+  service:
+     name: "jboss-eap"
+     state: started

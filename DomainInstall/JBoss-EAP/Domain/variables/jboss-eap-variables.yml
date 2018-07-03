@@ -1,0 +1,47 @@
+
+################################
+# COMMON CONTROLLER VARIABLES ##
+################################
+jboss_eap_user: jboss
+jboss_eap_home_path: /opt/jboss-eap
+jboss_eap_installer_file: jboss-eap-7.1.0-installer.jar
+#jboss_eap_last_patch: [ "jboss-eap-6.4.9-patch.zip", "jboss-eap-6.4.14-patch.zip"]
+jboss_eap_last_patch: [ "jboss-eap-7.1.3-patch.zip" ]
+jboss_eap_user_home: /home/jboss
+java_version: 1.8
+tmp_directory: /home/jboss/tmp
+jboss_binding_interface: eth0
+jboss_binding_management_interface: eth0
+
+user_name_hc_authentication: user
+user_pass_hc_authentication: cautiva
+
+jboss_eap_connection_user: connector
+jboss_eap_connection_password: cautiva
+
+################################
+# DOMAIN CONTROLLER VARIABLES ##
+################################
+domain_controller_name: dc-server
+domain_master_address: nodo130      # I M P O R T A N T E
+
+jboss_eap_admin_user: admin
+jboss_eap_admin_password: Cautiva1.
+
+# nuevo profile ['nombreNuevoProfile|tipoProfile', 'nombreNuevoProfile|tipoProfile']
+#new_profiles: ['perfilHA|ha','perfilDefault|default']
+new_profiles: ['perfilHA|ha']
+
+# nuevo grupo ['nombreNuevoGrupo|profile|socketbinding', 'nombreNuevoGrupo|profile|socketbinding']
+#new_groups: ['grupo1|perfilHA|HA-ha-sockets','grupoD|newDefault|newDefault-standard-sockets']
+
+new_groups_grupo: "grupo1"
+new_groups_profile: "perfilHA"
+new_groups_sockets: "perfilHA-ha-sockets"
+
+#############################
+# HOST CONTROLLER VARIABLES #
+#############################
+host_controller_name: "host1"
+host_controller_server: "host1-server"
+host_controller_portoffset: "100"

@@ -1,0 +1,5 @@
+---
+  - name: Creando Profile
+    script: create-profile.sh '{{ item }}' '{{ jboss_eap_home_path }}'
+    with_flattened:
+       - "{{ new_profiles }}"

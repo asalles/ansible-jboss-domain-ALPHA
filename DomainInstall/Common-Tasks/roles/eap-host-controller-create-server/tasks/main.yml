@@ -1,0 +1,4 @@
+---
+- name: Creando servidor {{host_controller_sever}} 
+  command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/host={{host_controller_name}}/server-config={{host_controller_server}}:add(group={{new_groups_grupo}},auto-start=true,socket-binding-port-offset={{host_controller_portoffset}})"
+

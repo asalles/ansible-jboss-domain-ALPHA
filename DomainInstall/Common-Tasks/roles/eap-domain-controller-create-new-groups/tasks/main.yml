@@ -1,0 +1,7 @@
+---
+- name: Creando Grupos
+  command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/server-group={{new_groups_grupo}}:add(profile={{new_groups_profile}},socket-binding-group={{new_groups_sockets}})"
+
+- name: JVM
+  command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/server-group={{new_groups_grupo}}/jvm=default:add()"
+#

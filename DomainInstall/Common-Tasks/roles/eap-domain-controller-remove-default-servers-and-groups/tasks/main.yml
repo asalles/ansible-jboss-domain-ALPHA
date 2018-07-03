@@ -1,0 +1,19 @@
+---
+  - name: Deteniendo Servidores
+    command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command=":stop-servers()"
+
+# host-master.xml don't contain server presintalled, but if you need to remove some server you should use the following examples:
+#  - name: Eliminando server one
+#    command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/host=master/server-config=server-one:remove"
+
+#  - name: Eliminando server two
+#    command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/host=master/server-config=server-two:remove"
+
+#  - name: Eliminando server three
+#    command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/host=master/server-config=server-three:remove"
+
+  - name: Eliminando main server group
+    command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/server-group=main-server-group:remove"
+
+  - name: Eliminando other server group
+    command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/server-group=other-server-group:remove"

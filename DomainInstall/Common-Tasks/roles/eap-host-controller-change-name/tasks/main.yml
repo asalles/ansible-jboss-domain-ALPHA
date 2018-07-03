@@ -1,0 +1,13 @@
+---
+- name: Cambiando el nombre del Host Controller {{host_controller_name}}
+  command: chdir={{jboss_eap_home_path}}/bin/ ././jboss-cli.sh --controller={{ hostvars[inventory_hostname]['ansible_'+jboss_binding_interface].ipv4.address }}:9999 -c  --command="/host=master:write-attribute(name=name, value={{host_controller_name}}"
+
+- name: "Stop JBoss"
+  service:
+     name: "jboss-eap"
+     state: stopped
+
+- name: "Start JBoss"
+  service:
+     name: "jboss-eap"
+     state: started
