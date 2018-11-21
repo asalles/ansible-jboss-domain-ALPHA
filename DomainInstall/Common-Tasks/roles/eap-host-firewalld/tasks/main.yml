@@ -8,6 +8,9 @@
 - name: Firewall settings 8080
   firewalld: zone=public port=8080/tcp permanent=true state=enabled
 
+- name: Firewall settings 8180
+  firewalld: zone=public port=8180/tcp permanent=true state=enabled
+
 - name: Firewall settings 8443
   firewalld: zone=public port=8443/tcp permanent=true state=enabled
 
