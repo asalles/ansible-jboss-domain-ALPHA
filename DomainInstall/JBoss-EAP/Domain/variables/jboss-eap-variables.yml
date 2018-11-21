@@ -42,6 +42,6 @@ new_groups_sockets: "perfilHA-ha-sockets"
 #############################
 # HOST CONTROLLER VARIABLES #
 #############################
-host_controller_name: "host1"
-host_controller_server: "host1-server"
+host_controller_name: "host1"           # should be {{ ansible_hostname }}
+host_controller_server: "host1-server"  # should be {{ ansible_hostname }}
 host_controller_portoffset: "100"       # http://server1:8180/
