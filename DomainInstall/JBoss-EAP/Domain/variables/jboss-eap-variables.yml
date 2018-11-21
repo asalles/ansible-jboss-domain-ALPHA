@@ -6,7 +6,7 @@ jboss_eap_user: jboss
 jboss_eap_home_path: /opt/jboss-eap
 jboss_eap_installer_file: jboss-eap-7.1.0-installer.jar
 #jboss_eap_last_patch: [ "jboss-eap-6.4.9-patch.zip", "jboss-eap-6.4.14-patch.zip"]
-jboss_eap_last_patch: [ "jboss-eap-7.1.3-patch.zip" ]
+jboss_eap_last_patch: [ "jboss-eap-7.1.5-patch.zip" ]
 jboss_eap_user_home: /home/jboss
 java_version: 1.8
 tmp_directory: /home/jboss/tmp
@@ -44,4 +44,4 @@ new_groups_sockets: "perfilHA-ha-sockets"
 #############################
 host_controller_name: "host1"
 host_controller_server: "host1-server"
-host_controller_portoffset: "100"
+host_controller_portoffset: "100"       # http://server1:8180/
