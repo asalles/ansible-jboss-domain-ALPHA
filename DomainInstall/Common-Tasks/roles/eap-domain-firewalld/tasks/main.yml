@@ -1,4 +1,7 @@
 ---
+- name: Firewall inicio y activacion
+  service: name=firewalld state=started enabled=yes
+    
 - name: Firewall settings 9999
   firewalld: zone=public port=9999/tcp permanent=true state=enabled
 
