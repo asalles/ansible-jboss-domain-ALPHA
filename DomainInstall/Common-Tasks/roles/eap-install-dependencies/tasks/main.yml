@@ -6,3 +6,4 @@
      - libselinux-python
      - apr
      - apr-util
+     - firewalld
